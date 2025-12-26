@@ -11,7 +11,7 @@
       width: 250px;
       display: flex;
       gap: 8px;
-      margin-left: auto;
+      margin: 0 auto 10px auto;
     }
     .ruta {
         background-color: rgb(166, 166, 222);
@@ -41,7 +41,7 @@
 
         <!-- Detta är den tredje inputten -->
         <div class="checkbox" id="divStyle">
-            <input type="checkbox" placeholder="Skriv något..." />
+            <input type="checkbox"/>
         </div>
 
         <button onclick="removeBox()">Ta bort</button>
@@ -49,8 +49,12 @@
 
 
     <script>
-        function removeBox() {
-        document.querySelectorAll(".textfeild").array.forEach((input => { input.value = "";});
-    } 
+    function removeBox() {
+    document.querySelectorAll(".textfield").forEach(div => {
+        const input = div.querySelector('input[type="text"]');
+        if (input) input.value = "";
+    });
+    }
+</script>
 </body>
 </html>
