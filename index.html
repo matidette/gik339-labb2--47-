@@ -4,27 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Labb 2 - Grupp 47</title>
-    <h1>Labb 2 - Grupp 47</h1>
      <style>
     .textfield {
-      border: 1px;
+      border: 5px solid black;
       padding: 10px;
       width: 250px;
       display: flex;
       gap: 8px;
-      align-self: right;
+      margin-left: auto;
     }
     .ruta {
         background-color: rgb(166, 166, 222);
-        border: 5px;
+        border: 5px solid black;
         padding: 50px;
         width: 250px;
         border-radius: 16px;
-        align-self: center;
+        margin: auto;
+    }
+    .checkbox{
+
     }
   </style>
 </head>
 <body>
+    <h1>Labb 2 - Grupp 47</h1>
     <div class="ruta">
         <!-- Detta är den första inputten -->
         <div class="textfield" id="color">
@@ -37,7 +40,7 @@
         </div>
 
         <!-- Detta är den tredje inputten -->
-        <div class="checkbox" id="color">
+        <div class="checkbox" id="divStyle">
             <input type="checkbox" placeholder="Skriv något..." />
         </div>
 
@@ -47,7 +50,7 @@
 
     <script>
         function removeBox() {
-        document.getElementById("color").remove();
-        } 
+        document.querySelectorAll(".textfeild").array.forEach((input => { input.value = "";});
+    } 
 </body>
 </html>
