@@ -1,11 +1,53 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="sv">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Labb 2 - Grupp 47</title>
+    <h1>Labb 2 - Grupp 47</h1>
+     <style>
+    .textfield {
+      border: 1px;
+      padding: 10px;
+      width: 250px;
+      display: flex;
+      gap: 8px;
+      align-self: right;
+    }
+    .ruta {
+        background-color: rgb(166, 166, 222);
+        border: 5px;
+        padding: 50px;
+        width: 250px;
+        border-radius: 16px;
+        align-self: center;
+    }
+  </style>
 </head>
 <body>
-    
+    <div class="ruta">
+        <!-- Detta är den första inputten -->
+        <div class="textfield" id="color">
+            <input type="text" placeholder="Skriv något..." />
+        </div>
+
+        <!-- Detta är den andra inputten -->
+        <div class="textfield" id="content">
+            <input type="text" placeholder="Skriv något..." />
+        </div>
+
+        <!-- Detta är den tredje inputten -->
+        <div class="checkbox" id="color">
+            <input type="checkbox" placeholder="Skriv något..." />
+        </div>
+
+        <button onclick="removeBox()">Ta bort</button>
+    </div>
+
+
+    <script>
+        function removeBox() {
+        document.getElementById("color").remove();
+        } 
 </body>
 </html>
