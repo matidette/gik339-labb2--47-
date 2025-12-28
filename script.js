@@ -18,9 +18,6 @@ const divElement = document.getElementsByClassName('ruta')[0];
 // Uppgift 5 - Skapa en fördefinierad funktion
 function handleInputEvent(e) {
     // Skriv ut vilket element som genererade eventet
-
-//    console.log('Event genererat av:', e.target);
-
     console.log('Event genererat av:', e.target);
     
     // Ta reda på inputfältets name-attribut (eller id som fallback)
@@ -29,11 +26,7 @@ function handleInputEvent(e) {
     // Om det är inputfältet med id "content"
     if (elementId === 'content') {
         // Hämta värdet från inputfältet
-//        const inputValue = e.target.value;
         outputDiv.textContent = e.target.value;
-        
-        // Skriv ut värdet till div-elementet
-//        divElement.innerHTML += inputValue;
     }
 }
 
@@ -46,7 +39,6 @@ checkbox.addEventListener('change', function() {
     const colorValue = colorInput.value;
     
     // Ändra bakgrundsfärgen på div-elementet
-//    divElement.style.backgroundColor = colorValue;
     outputDiv.style.backgroundColor = colorValue;
     
     console.log('Bakgrundsfärg ändrad till:', colorValue);
@@ -65,16 +57,24 @@ for (let i = 0; i < textFields.length; i++) {
     }
 }
 
-// Eventlyssnare till knappen (anonym funktion)
+// Ändra den sista eventlyssnaren för knappen:
 button.addEventListener('click', function() {
-    // Ta bort div-elementet från DOM-trädet
-    if (divElement.parentNode) {
-        divElement.parentNode.removeChild(divElement);
-        console.log('Div-elementet har tagits bort från DOM-trädet');
+    // Töm innehållet i outputDiv istället
+    outputDiv.textContent = "";
+    outputDiv.style.backgroundColor = "";
+    
+    // Rensa textfälten
+    for (let i = 0; i < textFields.length; i++) {
+        const inputField = textFields[i].querySelector('input[type="text"]');
+        if (inputField) {
+            inputField.value = "";
+        }
     }
     
-    // Alternativt med remove() metoden:
-    // divElement.remove();
+    // Återställ checkbox
+    checkbox.checked = false;
+    
+    console.log('Innehållet har rensats');
 });
 
 // Extra: Ta bort den befintliga inline onclick-funktionen från HTML
