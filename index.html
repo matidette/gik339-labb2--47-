@@ -39,59 +39,61 @@
   </style>
 </head>
 <body>
+    <!-- Rubrik på sidan -->
     <h1>Labb 2 - Grupp 47</h1>
     <div class="ruta">
-        <!-- Detta är den första inputten -->
+        <!-- Detta är den första inputten (färg) -->
         <div class="textfield" id="color">
             <input type="text" placeholder="Skriv en färg" />
         </div>
 
-        <!-- Detta är den andra inputten -->
+        <!-- Detta är den andra inputten (innehåll) -->
         <div class="textfield" id="content">
             <input type="text" placeholder="Skriv innehåll" />
         </div>
 
-        <!-- Detta är den tredje inputten -->
+        <!-- Detta är den tredje inputten (Checkbox för att avgöra om färgen i outputrutan ska ändras) -->
         <div class="checkbox" id="divStyle">
             <input type="checkbox"/>
         </div>
-
+        <!-- Knappen kör JavaScript funktion -->
         <button onclick="removeBox()">Ta bort</button>
+        <!-- Ruta där outputten/resultatet visas -->
         <div id="output" class="output"></div>
     </div>
 
     <script>
+    /* Funktionen körs när knappen trycks:
+    Först hämtar den värdena från inputfälten.
+    Sen visas texten i outputrutan.
+    Bakgrundsfärgen ändras när boxen blir ikryssad.
+    Rensar textfälten.
+    */
     function removeBox() {
-        const outputDiv = document.getElementById("output");
-        const colorInput = document.querySelector("#color input").value;
-        const textInput = document.querySelector("#content input").value;
-        const checkbox = document.querySelector("#divStyle input");
-        
-        // Visa text i output
-        output.textContent = textInput;
+    // Hämtar färgen från första inputfältet
+    const colorInput = document.querySelector("#color input").value;
+    // Hämtar texten från andra inputfältet
+    const textInput = document.querySelector("#content input").value;
+    // Hämtar checkboxen
+    const checkbox = document.querySelector("#divStyle input");
+    // Hämtar output
+    const output = document.getElementById("output");
 
-        // Om checkbox är ikryssad – ändra färg
-        if (checkbox.checked) {
-            output.style.backgroundColor = colorInput;
-        }
+    // Visa text i output
+    output.textContent = textInput;
 
-        // Rensa textfälten
-        document.querySelectorAll(".textfield input").forEach(input => {
-            input.value = "";
-        });
+    // Om checkbox är ikryssad – ändra färg
+    if (checkbox.checked) {
+        output.style.backgroundColor = colorInput;
     }
-</script>
 
-<!--
-    <script>
-    function removeBox() {
-    document.querySelectorAll(".textfield").forEach(div => {
-        const input = div.querySelector('input[type="text"]');
-        if (input) input.value = "";
+    // Rensa textfälten
+    document.querySelectorAll(".textfield input").forEach(input => {
+        input.value = "";
     });
     }
 </script>
--->
+<!-- Uppgift 3 -->
 <script src="script.js"></script>
 </body>
 </html>
