@@ -18,7 +18,10 @@ const divElement = document.getElementsByClassName('ruta')[0];
 // Uppgift 5 - Skapa en fördefinierad funktion
 function handleInputEvent(e) {
     // Skriv ut vilket element som genererade eventet
+
 //    console.log('Event genererat av:', e.target);
+
+    console.log('Event genererat av:', e.target);
     
     // Ta reda på inputfältets name-attribut (eller id som fallback)
     const elementId = e.target.parentElement.id;
