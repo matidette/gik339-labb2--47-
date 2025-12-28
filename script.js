@@ -1,15 +1,15 @@
 // Uppgift 4 - Skapa variabler
 
-// 1. Hämta checkboxen med getElementById (eftersom vi inte använt den förut)
+// Hämta checkboxen med getElementById (eftersom vi inte använt den förut)
 const checkbox = document.getElementById('divStyle').querySelector('input[type="checkbox"]');
 
-// 2. Hämta alla textfält med getElementsByClassName (eftersom vi inte använt den förut)
+// Hämta alla textfält med getElementsByClassName (eftersom vi inte använt den förut)
 const textFields = document.getElementsByClassName('textfield');
 
-// 3. Hämta knappen med querySelector (eftersom vi inte använt den förut)
+// Hämta knappen med querySelector (eftersom vi inte använt den förut)
 const button = document.querySelector('button');
 
-// 4. Hämta div-elementet med getElementsByClassName (rutan som innehåller allt)
+// Hämta div-elementet med getElementsByClassName (rutan som innehåller allt)
 const divElement = document.getElementsByClassName('ruta')[0];
 
 // Uppgift 5 - Skapa en fördefinierad funktion
