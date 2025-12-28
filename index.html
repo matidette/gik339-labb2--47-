@@ -1,21 +1,25 @@
+
+<!-- Uppgift 1 -->
 <!DOCTYPE html>
 <html lang="sv">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Labb 2 - Grupp 47</title>
+    <!-- Uppgift 2 -->
      <style>
     .textfield {
-      border: 5px solid black;
+      border: 2px solid black;
       padding: 10px;
       width: 250px;
       display: flex;
+      border-radius: 8px;
       gap: 8px;
       margin: 0 auto 10px auto;
     }
     .ruta {
         background-color: rgb(166, 166, 222);
-        border: 5px solid black;
+        border: 2px solid black;
         padding: 50px;
         width: 250px;
         border-radius: 16px;
@@ -24,6 +28,14 @@
     .checkbox{
 
     }
+    .output{
+        border: 2px solid black;
+        padding: 10px;
+        margin-top: 10px;
+        border-radius: 8px;
+        min-height: 15px;
+        background-color: aliceblue;
+    }
   </style>
 </head>
 <body>
@@ -31,12 +43,12 @@
     <div class="ruta">
         <!-- Detta är den första inputten -->
         <div class="textfield" id="color">
-            <input type="text" placeholder="Skriv något..." />
+            <input type="text" placeholder="Skriv en färg" />
         </div>
 
         <!-- Detta är den andra inputten -->
         <div class="textfield" id="content">
-            <input type="text" placeholder="Skriv något..." />
+            <input type="text" placeholder="Skriv innehåll" />
         </div>
 
         <!-- Detta är den tredje inputten -->
@@ -45,9 +57,32 @@
         </div>
 
         <button onclick="removeBox()">Ta bort</button>
+        <div id="output" class="output"></div>
     </div>
 
+    <script>
+    function removeBox() {
+        const outputDiv = document.getElementById("output");
+        const colorInput = document.querySelector("#color input").value;
+        const textInput = document.querySelector("#content input").value;
+        const checkbox = document.querySelector("#divStyle input");
+        
+        // Visa text i output
+        output.textContent = textInput;
 
+        // Om checkbox är ikryssad – ändra färg
+        if (checkbox.checked) {
+            output.style.backgroundColor = colorInput;
+        }
+
+        // Rensa textfälten
+        document.querySelectorAll(".textfield input").forEach(input => {
+            input.value = "";
+        });
+    }
+</script>
+
+<!--
     <script>
     function removeBox() {
     document.querySelectorAll(".textfield").forEach(div => {
@@ -56,5 +91,7 @@
     });
     }
 </script>
+-->
+<script src="script.js"></script>
 </body>
 </html>
